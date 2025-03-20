@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/my-universe-app/static/css/main.b85da8f4.css",
+    "main.js": "/my-universe-app/static/js/main.3d259b0f.js",
+    "static/js/453.09670055.chunk.js": "/my-universe-app/static/js/453.09670055.chunk.js",
+    "index.html": "/my-universe-app/index.html",
+    "main.b85da8f4.css.map": "/my-universe-app/static/css/main.b85da8f4.css.map",
+    "main.3d259b0f.js.map": "/my-universe-app/static/js/main.3d259b0f.js.map",
+    "453.09670055.chunk.js.map": "/my-universe-app/static/js/453.09670055.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b85da8f4.css",
+    "static/js/main.3d259b0f.js"
+  ]
+}
