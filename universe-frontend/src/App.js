@@ -7,12 +7,13 @@ const DataDisplay = () => {
 
   useEffect(() => {
     if (!selectedTable) return;
-
-    fetch(`http://localhost:5000/data/${selectedTable}`)
+  
+    fetch(`https://my-universe-app-production.up.railway.app/data/${selectedTable}`)
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((err) => console.error("❌ Fetch error:", err));
   }, [selectedTable]);
+  
 
   // Function to render table headers based on selected table
   const renderTableHeaders = () => {
