@@ -50,55 +50,6 @@ app.get("/data/:table", async (req, res) => {
   });
   
 
-/*app.get("/data/planet", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM planet ORDER BY distance_from_sun_in_millions_km ASC");
-    res.json(result.rows);
-  } catch (err) {
-    console.error("❌ Query error:", err);
-    res.status(500).json({ error: "Error retrieving planet data" });
-  }
-});
-
-app.get("/data/asteroids", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM asteroids");
-    res.json(result.rows);
-  } catch (err) {
-    console.error("❌ Query error:", err);
-    res.status(500).send("Error retrieving asteroids data");
-  }
-});
-
-app.get("/data/galaxy", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM galaxy");
-    res.json(result.rows);
-  } catch (err) {
-    console.error("❌ Query error:", err);
-    res.status(500).send("Error retrieving galaxies data");
-  }
-});
-app.get("/data/moon", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM moon");
-    res.json(result.rows);
-  } catch (err) {
-    console.error("❌ Query error:", err);
-    res.status(500).send("Error retrieving moon data");
-  }
-});
-
-app.get("/data/star", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM star");
-    res.json(result.rows);
-  } catch (err) {
-    console.error("❌ Query error:", err);
-    res.status(500).send("Error retrieving moon star");
-  }
-});*/
-
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`🚀 Server running on port ${port}`);
