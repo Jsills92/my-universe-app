@@ -2,9 +2,26 @@ require("dotenv").config();
 const express = require("express");
 const { Pool } = require("pg");
 const cors = require("cors");
-
 const app = express();
-app.use(cors());
+
+const allowedOrigins = process.env.NODE_ENV === 'production'
+  ? ['https://jsills92.github.io/my-universe-app']  // Production URL for GitHub Pages
+  : ['http://localhost:3000'];  // Local URL for development
+
+
+// Apply CORS with dynamic origin
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      // Allow requests with no origin (like mobile apps, Postman)
+      callback(null, true);
+    } else {
+      // Reject requests from disallowed origins
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
 app.use(express.json()); // Enables JSON parsing
 
 const pool = new Pool({
