@@ -1,5 +1,6 @@
 {
   "name": "universe-frontend",
+  "homepage": "https://jsills92.github.io/my-universe-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
