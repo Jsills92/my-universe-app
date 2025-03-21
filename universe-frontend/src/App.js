@@ -7,21 +7,19 @@ const DataDisplay = () => {
 
   useEffect(() => {
     if (!selectedTable) return;
-    
 
     //local host fetch
     fetch(`http://localhost:5000/data/${selectedTable}`)
-    .then((response) => response.json())
-    .then((data) => setData(data))
-    .catch((err) => console.error("❌ Fetch error:", err));
-}, [selectedTable]);
-// production fetch
-    /*fetch(`https://my-universe-app-production.up.railway.app/data/${selectedTable}`)
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((err) => console.error("❌ Fetch error:", err));
+  }, [selectedTable]);
+  // production fetch
+  /*fetch(`https://my-universe-app-production.up.railway.app/data/${selectedTable}`)
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((err) => console.error("❌ Fetch error:", err));
   }, [selectedTable]);*/
-  
 
   // Function to render table headers based on selected table
   const renderTableHeaders = () => {
@@ -139,44 +137,45 @@ const DataDisplay = () => {
   };
 
   return (
-    <div>
-      <h1>Universe Data Display</h1>
+    <div 
+  className="data-display-container"
+  style={{
+    backgroundImage: "url('/nebula.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "100vh",
+    width: "100%",
+  }}
+>
+  <h1>Universe Data Display</h1>
+  
+  {/* Buttons for switching between tables */}
+  <div>
+    <button onClick={() => setSelectedTable("planet")}>Planets</button>
+    <button onClick={() => setSelectedTable("asteroids")}>Asteroids</button>
+    <button onClick={() => setSelectedTable("galaxy")}>Galaxies</button>
+    <button onClick={() => setSelectedTable("moon")}>Moons</button>
+    <button onClick={() => setSelectedTable("star")}>Stars</button>
+  </div>
 
-      {/* Buttons for switching between tables */}
-      <div>
-        <button onClick={() => setSelectedTable("planet")}>Planets</button>
-        <button onClick={() => setSelectedTable("asteroids")}>Asteroids</button>
-        <button onClick={() => setSelectedTable("galaxy")}>Galaxies</button>
-        <button onClick={() => setSelectedTable("moon")}>Moons</button>
-        <button onClick={() => setSelectedTable("star")}>Stars</button>
-      </div>
+  {/* Table structure */}
+  <table>
+    <thead>{renderTableHeaders()}</thead>
+    <tbody>{renderTableRows()}</tbody>
+  </table>
 
-      {/* Table structure */}
-      <table>
-        <thead>{renderTableHeaders()}</thead>
-        <tbody>{renderTableRows()}</tbody>
-      </table>
+  {/* Attribution Link */}
+  <div className="attribution-link">
+    <footer>
+      <p>
+        <a href="https://www.vecteezy.com/free-videos/live-wallpaper-space">
+          Live Wallpaper Space Stock Videos by Vecteezy
+        </a>
+      </p>
+    </footer>
+  </div>
+</div>
 
-      <video autoPlay loop muted className="background-video">
-        <source
-          src="/vecteezy_galaxy-and-nebula-abstract-space-background-endless_34218232.mp4"
-          type="video/mp4"
-        />
-      </video>
-
-      <div className="attribution-link">
-      <footer>
-        <p>
-          <a href="https://www.vecteezy.com/free-videos/live-wallpaper-space">
-            Live Wallpaper Space Stock Videos by Vecteezy
-          </a>
-        </p>
-      </footer>
-
-      </div>
-
-    </div>
-    
   );
 };
 
