@@ -13,17 +13,17 @@ const DataDisplay = () => {
     if (!selectedTable) return;
 
     //local host fetch
-    fetch(`http://localhost:5000/data/${selectedTable}`)
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((err) => console.error("❌ Fetch error:", err));
-  }, [selectedTable]);
-  // production fetch
-  /*fetch(`https://my-universe-app-production.up.railway.app/data/${selectedTable}`)
+    /*fetch(`http://localhost:5000/data/${selectedTable}`)
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((err) => console.error("❌ Fetch error:", err));
   }, [selectedTable]);*/
+  // production fetch
+  fetch(`https://my-universe-app-production.up.railway.app/data/${selectedTable}`)
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((err) => console.error("❌ Fetch error:", err));
+  }, [selectedTable]);
 
   // Function to render table headers based on selected table
   const renderTableHeaders = () => {
