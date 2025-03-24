@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/my-universe-app/static/css/main.b85da8f4.css",
-    "main.js": "/my-universe-app/static/js/main.f4df0ccf.js",
+    "main.js": "/my-universe-app/static/js/main.27c89fba.js",
     "static/js/453.09670055.chunk.js": "/my-universe-app/static/js/453.09670055.chunk.js",
     "static/media/vecteezy_galaxy-and-nebula-abstract-space-background-endless_34218232.mp4": "/my-universe-app/static/media/vecteezy_galaxy-and-nebula-abstract-space-background-endless_34218232.f6e501a7b75a8c35b19b.mp4",
     "index.html": "/my-universe-app/index.html",
     "main.b85da8f4.css.map": "/my-universe-app/static/css/main.b85da8f4.css.map",
-    "main.f4df0ccf.js.map": "/my-universe-app/static/js/main.f4df0ccf.js.map",
+    "main.27c89fba.js.map": "/my-universe-app/static/js/main.27c89fba.js.map",
     "453.09670055.chunk.js.map": "/my-universe-app/static/js/453.09670055.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b85da8f4.css",
-    "static/js/main.f4df0ccf.js"
+    "static/js/main.27c89fba.js"
   ]
 }
