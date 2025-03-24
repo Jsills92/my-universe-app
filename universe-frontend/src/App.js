@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+// import nebulaImage from './Assets/nebula.jpg'; use this if you want nebula background
+import liveBGVideo from './Assets/vecteezy_galaxy-and-nebula-abstract-space-background-endless_34218232.mp4';
+
+
 
 const DataDisplay = () => {
   const [data, setData] = useState([]);
@@ -136,17 +140,37 @@ const DataDisplay = () => {
     ));
   };
 
-  return (
-    <div 
-  className="data-display-container"
+  // use this inside of first div if you want nebula background picture
+    /*className="data-display-container"
   style={{
-    backgroundImage: "url('/nebula.jpg')",
+    backgroundImage: `url(${nebulaImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: "100vh",
     width: "100%",
-  }}
->
+  }}*/
+
+  return (
+    <div 
+    Style={{ position: 'relative', height: '100vh', width: '100%' }}>
+  <video 
+    autoPlay 
+    loop 
+    muted 
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '120%',
+      objectFit: 'cover',
+      zIndex: -1
+    }}
+    >
+          <source src={liveBGVideo} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+    
   <h1>Universe Data Display</h1>
   
   {/* Buttons for switching between tables */}
